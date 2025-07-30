@@ -1,4 +1,5 @@
 import scrapy
+from bs4 import BeautifulSoup
 
 
 class QuotesSpider(scrapy.Spider):
@@ -26,6 +27,11 @@ class QuotesSpider(scrapy.Spider):
     def parse_Jutsu(self, response):
         jutsu_name = response.css("h1.page_header___title::text").extract()[0]
         jutsu_name = jutsu_name.strip()
+
+        div_selector = response.css("div.mw-parser-output")[0]
+        div_html = div_selector.extract()
+
+        soup = BeautifulSoup(div_html).find("div")
 
         yield dict(
             jutsu_name=jutsu_name,

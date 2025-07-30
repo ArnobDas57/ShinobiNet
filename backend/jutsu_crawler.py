@@ -1,7 +1,6 @@
 import scrapy
 from bs4 import BeautifulSoup
 
-
 class JutsuSpider(scrapy.Spider):
     name = "narutospider"
     start_urls = [
@@ -14,15 +13,13 @@ class JutsuSpider(scrapy.Spider):
             .css("a::attr(href)")
             .extract()
         ):
-            extracted_data = scrapy.Request(
-                "https://naruto.fandom.com" + href, callback=self.parse_jutsu
+            yield scrapy.Request(
+                url="https://naruto.fandom.com" + href, callback=self.parse_jutsu
             )
 
-            yield extracted_data
-
-        next_page = response.css("mw-nextlink").get()
-        if next_page is not None:
-            yield response.follow(next_page, self.parse)
+        next_page = response.css("a.mw-nextlink::attr(href)").get()
+        if next_page:
+            yield response.follow(next_page, callback=self.parse)
 
     def parse_jutsu(self, response):
         jutsu_name = response.css("h1.page_header___title::text").extract()[0]

@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="images/naruto.jpg" alt="Naruto" width="45%" style="margin-right: 10px;"/>
+  <img src="images/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Naruto Shippuden" width="45%"/>
+</p>
 
-## Getting Started
 
-First, run the development server:
+# 🌀 Exploring Naruto Through Data Science
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-- This is a full pipeline project that combines scraping, cleaning, analysis, visualization, and modelling — all based on the legendary world of Naruto 🍥.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Project Pipeline
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. 🔎 Web Scraping with Scrapy
+- Scraped character and jutsu data from Naruto-related websites
+- Exported into structured `.jsonl` format for NLP processing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. 🧠 Named Entity Recognition (NER) with spaCy
+- Extracted characters, locations, clans, and jutsu names from episode scripts
+- Built custom pipelines to handle anime-specific tokens and patterns
 
-## Learn More
+### 3. 🕸️ Character Network Graph
+- Built a character interaction graph using `networkx` and `pyvis`
+- Visualized node connectivity to identify key figures (yes, Naruto's popular — but who really *connects* the story?)
 
-To learn more about Next.js, take a look at the following resources:
+### 4. 🧪 Theme Classification with Zero-shot Learning
+- Used Hugging Face zero-shot classifiers to detect main themes in dialogue
+- Examples: friendship, betrayal, ambition, legacy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 5. 🤖 Jutsu Classification with Transformers
+- Fine-tuned a `distilbert-base-uncased` model to classify jutsu into:
+  - `Ninjutsu`, `Taijutsu`, or `Genjutsu`
+- Trained on titles and descriptions using HuggingFace `transformers` + PyTorch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧠 Skills Learned & Implemented
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Web scraping & data wrangling
+- NLP (Named Entity Recognition, Zero-shot Learning)
+- Transformer model fine-tuning (BERT)
+- Graph theory & visual analytics
+- End-to-end pipeline creation

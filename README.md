@@ -1,9 +1,3 @@
-<p align="center">
-  <img src="images/naruto.jpg" alt="Naruto" width="45%" style="margin-right: 10px;"/>
-  <img src="images/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Naruto Shippuden" width="45%"/>
-</p>
-
-
 # 🌀 Exploring Naruto Through Data Science
 
 -- This is a full pipeline project that combines scraping, cleaning, analysis, visualization, and modelling — all based on the legendary world of Naruto 🍥.
@@ -40,3 +34,10 @@
 - Transformer model fine-tuning (BERT)
 - Graph theory & visual analytics
 - End-to-end pipeline creation
+
+---
+
+<p align="center">
+  <img src="images/naruto.jpg" alt="Naruto" width="45%" height="1000" style="margin-right: 10px;"/>
+  <img src="images/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Naruto Shippuden" width="45%" height="1000"/>
+</p>
